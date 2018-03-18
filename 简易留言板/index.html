@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#box{
+				width: 300px;
+				height: 300px;
+				border: 1px solid red;
+				font-style: '楷体';
+			}
+		</style>
+	</head>
+	<body>
+		<script>
+			/*
+			 * 需求
+			 * 用户输入字符，然后提交到div中
+			 * 步骤
+			 * 1.获取id为text，btn,box
+			 * 2.创建点击事件btn
+			 * 	1.获取text中的值（用户输入的字符)(text.value)
+			 *  2.将其提交到div中
+			 */
+			
+			window.onload=function(){
+				var text=document.getElementById('text');
+				var btn=document.getElementById('btn');
+				var box=document.getElementById('box');
+				
+				btn.onclick=function(){
+					var txt=text.value;
+					box.innerHTML +=  '<p>'+txt+'<p>'
+				};
+			};
+		</script>
+		<input type="text" id="text" value="" />
+		<input type="button" id="btn" value="提交" />
+		<div id="box"></div>
+	</body>
+</html>
